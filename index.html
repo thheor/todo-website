@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <title>Get it done.</title>
+</head>
+<body onload="updateClock(); setInterval('updateClock()', 1000)">
+    <div class="header" id="header">
+        <img src="gojo.jpeg" class="gojo" id="gojo">
+        <h1>Get it done.</h1>
+    </div>
+    <div class="label" id="label">
+        <form action="">
+            <input type="text" placeholder="Add a task..." class="task" id="task">
+            <button class="task-btn" id="task-btn" type="submit" onclick="add()">I Got This!</button>
+        </form>
+    </div>
+    <div class="date" id="date">
+        <p class="time" id="time"></p>
+    </div>
+    <div class="todo" id="todo">
+        <ul class="list" id="list">
+        </ul>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

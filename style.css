@@ -1,0 +1,103 @@
+body {
+    font-family: 'Serif';
+    font-size: 1.2rem;
+    text-align: center;
+    background: #4A7FA7;
+    background: linear-gradient(90deg, rgba(74, 127, 167, 1) 0%, rgba(26, 61, 99, 1) 35%, rgba(10, 25, 49, 1) 100%);
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.header h1 {
+    font-family: 'work sans';
+    font-size: 4rem;
+    font-weight: 400;
+    color: #f6fafd;
+    animation: typing 2s steps(12) forwards, blink 0.75s step-end infinite;
+    border-right: 4px solid #4A7FA7;
+    margin-inline: auto;
+    white-space: nowrap;
+    display: inline-block;
+    overflow: hidden;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 10ch;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+.header .gojo {
+    margin-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 600px;
+    border-radius: 30px;
+}
+
+.label form {
+    display: flex;
+    justify-content: center;
+    margin-top: -10px;
+}
+
+.label .task {
+    font-family: 'work sans';
+    font-size: 1.3rem;
+    color: #0a1931;
+    padding: 17px;
+    max-width: 600px;
+    width: 100%;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border: 1px solid gray;
+    background-color: #f6fafd;
+    outline: none;
+    caret-color: #4A7FA7;
+}
+
+.label .task-btn {
+    width: 150px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    background-color: #4A7FA7;
+    border: none;
+    border-radius: 0 30px 30px 0;
+    transition: 0.5s ease;
+}
+
+.label .task-btn:hover {
+    font-size: 1.4rem;
+}
+
+.time {
+    color: #f6fafd;
+    letter-spacing:0.1rem;
+}
+
+.todo li {
+    color: #f6fafd;
+    list-style-type: none;
+    position: absolute;
+    margin: auto;
+    left: 50%;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: rgba(10, 25, 49, 0.5);
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+    border-radius: 20px;
+}
