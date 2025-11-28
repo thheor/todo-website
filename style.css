@@ -88,16 +88,40 @@ body {
     letter-spacing:0.1rem;
 }
 
-.todo li {
-    color: #f6fafd;
+.list {
+    display: block;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
     list-style-type: none;
-    position: absolute;
+}
+
+.todo li {
+    text-align: left;
+    color: #f6fafd;
     margin: auto;
-    left: 50%;
-    margin-top: 20px;
+    width: 450px;
+    margin-top: 10px;
     padding: 10px 20px;
     background-color: rgba(10, 25, 49, 0.5);
-    transform: translate(-50%, -50%);
     font-size: 1.5rem;
     border-radius: 20px;
+}
+
+.todo .list li span {
+    margin-right: 5px;
+    float: right;
+    right: 0px;
+    scale: 0.9;
+    transition: 0.5s ease;
+}
+
+.todo .list li span .check {
+    margin-right: 10px;
+}
+
+.todo .list li span:hover {
+    color: #4A7FA7;
+    scale: 1;
 }
