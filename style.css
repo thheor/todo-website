@@ -109,7 +109,7 @@ body {
     border-radius: 20px;
 }
 
-.todo .list li span {
+.todo .list li .trash, .todo .list li .check {
     margin-right: 5px;
     float: right;
     right: 0px;
@@ -117,11 +117,11 @@ body {
     transition: 0.5s ease;
 }
 
-.todo .list li span .check {
+.todo .list li span .check, .trash {
     margin-right: 10px;
 }
 
-.todo .list li span:hover {
+.todo .list li .trash:hover, .todo .list li .check:hover {
     color: #4A7FA7;
     scale: 1;
 }
@@ -165,6 +165,27 @@ body {
 
     .todo li {
         font-size: 1rem;
-        width: 60%;
+        width: 70%;
+        /* color: #4A7FA7; */
+    }
+}
+
+@media (max-width: 400px) {
+    .header h1 {
+        font-size: 3rem;
+    }
+
+    .label .task, .task-btn{
+        padding: 5px;
+        width: 70%;
+    }
+
+    .label .task {
+        font-size: 0.8rem;
+    }
+
+    .label .task-btn {
+        font-size: 0.8rem;
+        width: 60px;
     }
 }
