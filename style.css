@@ -125,3 +125,46 @@ body {
     color: #4A7FA7;
     scale: 1;
 }
+
+@media (max-width: 900px){
+    .label {
+        width: 80%;
+        margin: auto;
+    }
+}
+
+@media (max-width: 700px){
+    body {
+        font-size: 1rem;
+    }
+
+    .header h1 {
+        letter-spacing: 0px;
+        font-size: 3.5rem;
+    }
+
+    .header .gojo {
+        width: 80%;
+        margin-top: 40px;
+    }
+
+    .label .task {
+        padding: 10px;
+        font-size: 1rem;
+    }
+
+    .label .task-btn {
+        width: 30%;
+        font-size: 1rem;
+    }
+
+    .label .task-btn:hover {
+        width: 30%;
+        font-size: 1.05rem;
+    }
+
+    .todo li {
+        font-size: 1rem;
+        width: 60%;
+    }
+}
