@@ -1,35 +1,29 @@
 function updateClock(){
     let date = new Date();
 
-    // let y = date.getFullYear(),
-    //     mon = date.getMonth() + 1,
-    //     d = date.getDate(),
-    //     h = date.getHours(),
-    //     min = date.getMinutes(),
-    //     s = date.getSeconds();
-    
-    // let currenDate = y + "-" + mon + "-" + d;
-
-    // let localTime = date.toLocaleTimeString("en-US", { timeZone: "Asia/Jakarta", timeStyle: "long"});
     const element = document.getElementById('time');
-    // element.innerHTML = currenDate + ", " + localTime;
     element.innerHTML = date.toLocaleString();
 }
 
 setInterval(updateClock, 1000);
+
+let tempObject = {};
 
 let itemArray = localStorage.getItem('items') ?
 JSON.parse(localStorage.getItem('items')) : [];
 const ul = document.getElementById('list');
 const input = document.getElementById('task');
 
+const myData = localStorage.getItem('items');
+itemArray = myData ? JSON.parse(myData) : [];
+
 itemArray.forEach(addTask);
 function addTask(text){
     const li = document.createElement('li');
-    // li.setAttribute('id');
+    li.className = 'item-list';
     const check = document.createElement('span');
     const trash = document.createElement('span');
-    li.textContent = text;
+    li.textContent = text.list;
     ul.appendChild(li);
     li.appendChild(trash);
     li.appendChild(check);
@@ -44,24 +38,42 @@ function addTask(text){
     });
 
     check.addEventListener('click', function(){
-        const index = itemArray.indexOf(text);
-        li.style.textDecorationLine = 'line-through';
+        textIndex = itemArray.findIndex( todo => todo.list === text.list);
+
+        itemArray[textIndex].done = true;
+
+        console.log(li.textContent);
         localStorage.setItem('items', JSON.stringify(itemArray));
+        checked();
     })
 }
 
+function checked(){
+    li = document.querySelectorAll('.item-list');
+    li.forEach(item => {
+        console.log(item.textContent);
+    })
+
+    for(let i = 0; i < itemArray.length; i++){
+        if(itemArray[i].done){
+            li[i].style.textDecorationLine = 'line-through';
+            li[i].style.opacity = '0.6';
+        }
+    }
+}
+
 function add(){
-    itemArray.push(input.value);
+    tempObject = {
+        list: input.value,
+        done: false
+    }
+    
+    itemArray.push(tempObject);
+    console.log(input.value);
+    
     localStorage.setItem('items', JSON.stringify(itemArray));
-    addTask(input.value);
+    addTask(tempObject);
     input.value = '';
 }
 
-const check = document.getElementById('check');
-const trash = document.getElementById('trash');
-
-function removeTodo(){
-    let id = trash.id;
-    let retrieve = localStorage.getItem("items");
-    retrieve.dataCache.splice()    
-}
+checked()
