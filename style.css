@@ -97,6 +97,10 @@ body {
     list-style-type: none;
 }
 
+.todo {
+    padding-bottom: 50px;
+}
+
 .todo li {
     text-align: left;
     color: #f6fafd;
